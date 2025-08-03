@@ -1,0 +1,19 @@
+@import '@fortawesome/fontawesome-free/css/all.min.css';
+@import './base.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply tracking-wider;
+  }
+}
+
+#app {
+  /* max-width: 1280px; */
+  margin: 0;
+  padding: 0;
+}
+
