@@ -2,26 +2,34 @@
 // Dummy data
 const qualifications = [
   {
-    university: "Oxford University",
-    date: "Jan 2014 - Dec 2018",
-    degree: "Bachelor of Medicine & Bachelor of Surgery ( MBBS )",
+    university: "Universitas Indonesia",
+    date: "2007 - 2013",
+    degree: "Faculty of Medicine",
   },
   {
-    university: "Oxford University",
-    date: "Jan 2014 - Dec 2018",
-    degree: "Bachelor of Medicine & Bachelor of Surgery ( MBBS )",
+    university: "University of Melbourne",
+    date: "2010 - 2011",
+    degree: "Bachelor of Medical Science ( BMedSc )",
   },
   {
-    university: "Oxford University",
-    date: "Jan 2014 - Dec 2018",
-    degree: "Bachelor of Medicine & Bachelor of Surgery ( MBBS )",
-  },
-  {
-    university: "Oxford University",
-    date: "Jan 2014 - Dec 2018",
-    degree: "Bachelor of Medicine & Bachelor of Surgery ( MBBS )",
-  },
+    university: "Cipto Mangunkusumo Hospital",
+    date: "2016 - 2020",
+    degree: "Urology Resident",
+  }
 ];
+
+const organizations = [
+  {
+    name: "Researcher of Global Andrology Forum",
+    role: "Member",
+    date: "2022 - Present",
+  },
+  {
+    name: "Member of IAUI (Ikatan Ahli Urologi Indonesia) Banten",
+    role: "Member",
+    date: "2023 - Present",
+  }
+]
 </script>
 
 <template>
@@ -34,12 +42,12 @@ const qualifications = [
 
     <div class="max-w-4xl mx-auto relative z-10 text-center">
       <!-- Section Title -->
-      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-10">My Qualification & Awards</h2>
+      <h2 class="text-3xl md:text-4xl font-extrabold text-gray-900 mb-10">My Education & Organization</h2>
 
       <!-- Grid Cards -->
       <div class="grid grid-cols-1 gap-6">
         <div v-for="(q, index) in qualifications" :key="index"
-          class="bg-white rounded-2xl shadow-sm p-6 flex flex-col gap-4">
+          class="bg-blue-100 rounded-2xl shadow-sm p-6 flex flex-col gap-4">
           <!-- University & Date -->
           <div class="text-left">
             <p class="text-lg font-semibold text-gray-900">{{ q.university }}</p>
@@ -49,6 +57,15 @@ const qualifications = [
           <!-- Degree -->
           <div class="text-left">
             <p class="text-base font-bold text-gray-800">{{ q.degree }}</p>
+          </div>
+        </div>
+
+        <div v-for="(o, index) in organizations" :key="index"
+          class="bg-yellow-50 rounded-2xl shadow-sm p-6 flex flex-col gap-4">
+          <!-- University & Date -->
+          <div class="text-left">
+            <p class="text-lg font-semibold text-gray-900">{{ o.name }}</p>
+            <p class="text-sm text-gray-600">{{ o.date }}</p>
           </div>
         </div>
       </div>

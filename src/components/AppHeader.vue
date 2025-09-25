@@ -1,4 +1,5 @@
 <script setup>
+import { redirectToWhatsapp } from '@/utils/redirect'
 import { ref, defineProps } from 'vue'
 const props = defineProps({
   sticky: Boolean
@@ -7,6 +8,10 @@ const props = defineProps({
 const mobileMenuOpen = ref(false)
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
+}
+
+const onClickAppointment = () => {
+  redirectToWhatsapp()
 }
 </script>
 
@@ -20,7 +25,7 @@ const toggleMobileMenu = () => {
       <!-- Logo -->
       <div class="flex items-center gap-2">
         <img src="/assets/icon/ic_rupiahcepat.png" alt="Meditics Logo" class="w-6 h-6" />
-        <span :class="['font-bold text-xl', sticky ? 'text-black' : 'text-white']">Meditics</span>
+        <span :class="['font-bold text-xl', sticky ? 'text-black' : 'text-white']">Dr Isaac Deswanto</span>
       </div>
 
       <!-- Desktop Navigation -->
@@ -39,7 +44,8 @@ const toggleMobileMenu = () => {
       <!-- CTA & Hamburger -->
       <div class="flex items-center gap-4">
         <button
-          class="hidden lg:block bg-lime-200 text-gray-900 font-semibold rounded px-5 py-2 hover:bg-lime-300 transition">
+          class="hidden lg:block bg-lime-200 text-gray-900 font-semibold rounded px-5 py-2 hover:bg-lime-300 transition"
+          @click="onClickAppointment()">
           BOOK AN APPOINTMENT
         </button>
         <button @click="toggleMobileMenu" class="p-2 rounded bg-gray-100 hover:bg-gray-200 lg:hidden">

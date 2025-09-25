@@ -4,7 +4,7 @@ import AppHeader from '@/components/AppHeader.vue';
 import DoctorProfile from './LandingPage/DoctorProfile.vue';
 import DoctorIntro from './LandingPage/DoctorIntro.vue';
 import MedicalService from './LandingPage/MedicalService.vue';
-import DoctorQualification from './LandingPage/DoctorQualification.vue';
+import DoctorEducation from './LandingPage/DoctorEducation.vue';
 import DoctorBlog from './LandingPage/DoctorBlog.vue';
 import ClinicLocation from './LandingPage/ClinicLocation.vue';
 import AppFooter from '@/components/AppFooter.vue';
@@ -66,7 +66,7 @@ onBeforeUnmount(() => {
       <DoctorProfile/>
       <DoctorIntro/>
       <MedicalService/>
-      <DoctorQualification/>
+      <DoctorEducation/>
       <DoctorBlog/>
       <ClinicLocation/>
     </div>

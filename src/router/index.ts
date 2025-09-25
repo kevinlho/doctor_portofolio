@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
+import ClinicalPost from '@/views/ClinicalPost.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
 
 const adminRoute: RouteRecordRaw[] = [{}]
@@ -16,6 +17,16 @@ const baseRoute: RouteRecordRaw[] = [
       level: ""
     }
   },
+  {
+    path: '/clinicalpost',
+    name: 'clinicalpost',
+    component: ClinicalPost,
+    meta: {
+      requiresAuth: false,
+      level: ""
+    }
+  },
+  
 
   // 🛑 Catch-all 404 route (must be last!)
   {
