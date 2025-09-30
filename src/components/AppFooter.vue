@@ -1,4 +1,6 @@
 <script setup>
+import { navItems } from '@/router/navigation';
+
 </script>
 
 <template>
@@ -11,20 +13,21 @@
           <h2 class="text-2xl font-bold">Dr. Isaac Deswanto</h2>
         </div>
         <p class="text-sm text-gray-300 mb-6 max-w-sm">
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+          It is a long established fact that a reader will be distracted by the readable content of a page when looking
+          at its layout.
         </p>
         <div class="flex items-center gap-4">
           <a href="#" class="bg-[#1B2C47] hover:bg-blue-600 p-3 rounded-md">
-            <i class="fab fa-facebook-f"></i>
+            <ion-icon name="logo-instagram"></ion-icon>
           </a>
           <a href="#" class="bg-[#1B2C47] hover:bg-blue-600 p-3 rounded-md">
-            <i class="fab fa-twitter"></i>
+            <ion-icon name="logo-tiktok"></ion-icon>
           </a>
           <a href="#" class="bg-[#1B2C47] hover:bg-blue-600 p-3 rounded-md">
-            <i class="fab fa-youtube"></i>
+            <ion-icon name="logo-youtube"></ion-icon>
           </a>
           <a href="#" class="bg-[#1B2C47] hover:bg-blue-600 p-3 rounded-md">
-            <i class="fab fa-instagram"></i>
+            <ion-icon name="logo-twitter"></ion-icon>
           </a>
         </div>
       </div>
@@ -35,10 +38,12 @@
         <div>
           <h3 class="text-lg font-semibold border-b-2 border-blue-600 inline-block mb-4">Navigation</h3>
           <ul class="space-y-2 text-sm text-gray-300">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Pages</a></li>
-            <li><a href="#">Blog</a></li>
+            <li v-for="item in navItems" :key="item.label">
+              <RouterLink :to="item.to"
+                class="hover:text-blue-500">
+                {{ item.label }}
+              </RouterLink>
+            </li>
           </ul>
         </div>
 
@@ -61,7 +66,7 @@
     <div class="max-w-7xl mx-auto flex flex-col items-center gap-6 text-sm text-gray-400">
       <div class="text-center space-y-1">
         <p>
-          © <a href="#" class="text-blue-500 hover:underline">Meditics</a> 2025. All Rights Reserved.
+          © <a href="#" class="text-blue-500 hover:underline">Dr. Isaac Deswanto</a> 2025. All Rights Reserved.
         </p>
         <!-- <p class="space-x-4">
           <a href="#" class="hover:underline">Terms of use</a>

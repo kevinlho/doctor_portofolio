@@ -1,6 +1,8 @@
 <script setup>
+import { navItems } from '@/router/navigation'
 import { redirectToWhatsapp } from '@/utils/redirect'
 import { ref, defineProps } from 'vue'
+
 const props = defineProps({
   sticky: Boolean
 })
@@ -33,13 +35,10 @@ const onClickAppointment = () => {
         'hidden lg:flex gap-6 text-sm font-semibold',
         sticky ? 'text-black' : 'text-white'
       ]">
-        <RouterLink :to="{ name: 'home', hash: '#doctor-profile' }">Profile</RouterLink>
-        <!-- <RouterLink :to="{ name: 'home', hash: '#doctor-intro' }">Intro</RouterLink> -->
-        <RouterLink :to="{ name: 'home', hash: '#clinical-post' }">Clinical Post</RouterLink>
-        <!-- <RouterLink :to="{ name: 'home', hash: '#medical-service' }">Services</RouterLink> -->
-        <RouterLink :to="{ name: 'home', hash: '#doctor-education' }">Education</RouterLink>
-        <!-- <RouterLink :to="{ name: 'home', hash: '#doctor-blog' }">Blog</RouterLink> -->
-        <RouterLink :to="{ name: 'home', hash: '#clinic-location' }">Location</RouterLink>
+        <RouterLink v-for="item in navItems" :key="item.label" :to="item.to"
+          class="hover:text-blue-500">
+          {{ item.label }}
+        </RouterLink>
       </nav>
 
       <!-- CTA & Hamburger -->
