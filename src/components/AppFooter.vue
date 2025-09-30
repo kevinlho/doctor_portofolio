@@ -7,8 +7,8 @@
       <!-- Logo + Social -->
       <div class="flex-1">
         <div class="flex items-center gap-2 mb-4">
-          <i class="fas fa-heartbeat text-blue-500 text-2xl"></i>
-          <h2 class="text-2xl font-bold">Meditics</h2>
+          <img src="/assets/icon/ic_logo.png" alt="" class="w-9 h-9" />
+          <h2 class="text-2xl font-bold">Dr. Isaac Deswanto</h2>
         </div>
         <p class="text-sm text-gray-300 mb-6 max-w-sm">
           It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
@@ -63,10 +63,10 @@
         <p>
           © <a href="#" class="text-blue-500 hover:underline">Meditics</a> 2025. All Rights Reserved.
         </p>
-        <p class="space-x-4">
+        <!-- <p class="space-x-4">
           <a href="#" class="hover:underline">Terms of use</a>
           <a href="#" class="hover:underline">Privacy Environmental Policy</a>
-        </p>
+        </p> -->
       </div>
     </div>
   </footer>

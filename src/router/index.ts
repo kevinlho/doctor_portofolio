@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ClinicalPost from '@/views/ClinicalPost.vue'
+import ClinicalPostDetail from '@/views/ClinicalPostDetail.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
 
 const adminRoute: RouteRecordRaw[] = [{}]
@@ -18,9 +18,10 @@ const baseRoute: RouteRecordRaw[] = [
     }
   },
   {
-    path: '/clinicalpost',
+    path: '/clinicalpost/:id',
     name: 'clinicalpost',
-    component: ClinicalPost,
+    component: ClinicalPostDetail,
+    props: true,
     meta: {
       requiresAuth: false,
       level: ""
@@ -43,6 +44,16 @@ const router = createRouter({
     ...userRoute,
     ...baseRoute
   ],
+  scrollBehavior(to, from, savedPosition) {
+    if (savedPosition) return savedPosition
+    if (to.hash) {
+      return {
+        el: to.hash,        // use the hash as a CSS selector
+        behavior: 'smooth'  // smooth scrolling
+      }
+    }
+    return { top: 0 }
+  }
 })
 
 // ✅ Global Navigation Guard

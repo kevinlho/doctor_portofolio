@@ -24,7 +24,7 @@ const onClickAppointment = () => {
     <div class="flex items-center justify-between">
       <!-- Logo -->
       <div class="flex items-center gap-2">
-        <img src="/assets/icon/ic_rupiahcepat.png" alt="Meditics Logo" class="w-6 h-6" />
+        <img src="/assets/icon/ic_logo.png" alt="" class="w-9 h-9" />
         <span :class="['font-bold text-xl', sticky ? 'text-black' : 'text-white']">Dr Isaac Deswanto</span>
       </div>
 
@@ -33,12 +33,13 @@ const onClickAppointment = () => {
         'hidden lg:flex gap-6 text-sm font-semibold',
         sticky ? 'text-black' : 'text-white'
       ]">
-        <a href="#" class="hover:text-blue-600">HOME</a>
-        <a href="#" class="hover:text-blue-600">ABOUT</a>
-        <a href="#" class="hover:text-blue-600">SERVICES</a>
-        <a href="#" class="hover:text-blue-600">PAGES</a>
-        <a href="#" class="hover:text-blue-600">BLOG</a>
-        <a href="#" class="hover:text-blue-600">CONTACT</a>
+        <RouterLink :to="{ name: 'home', hash: '#doctor-profile' }">Profile</RouterLink>
+        <!-- <RouterLink :to="{ name: 'home', hash: '#doctor-intro' }">Intro</RouterLink> -->
+        <RouterLink :to="{ name: 'home', hash: '#clinical-post' }">Clinical Post</RouterLink>
+        <!-- <RouterLink :to="{ name: 'home', hash: '#medical-service' }">Services</RouterLink> -->
+        <RouterLink :to="{ name: 'home', hash: '#doctor-education' }">Education</RouterLink>
+        <!-- <RouterLink :to="{ name: 'home', hash: '#doctor-blog' }">Blog</RouterLink> -->
+        <RouterLink :to="{ name: 'home', hash: '#clinic-location' }">Location</RouterLink>
       </nav>
 
       <!-- CTA & Hamburger -->

@@ -70,6 +70,8 @@ export default {
             }
         },
     },
-    plugins: [],
+    plugins: [
+        require('daisyui'),   // <-- ✅ Add this line
+    ],
 }
 

@@ -20,24 +20,22 @@ function selectLocation(src: string) {
       <!-- Left: Title and Map -->
       <div class="w-full">
         <!-- Title -->
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-black">Apply for Appointment</h2>
+        <h2 class="text-3xl md:text-4xl font-bold text-black">Apply for Appointment</h2>
+        <!-- Location Buttons -->
+        <div class="flex-1 w-full space-y-4 text-black my-4">
+          <div class="flex flex-col sm:flex-row gap-3">
+            <button v-for="(loc, index) in locations" :key="index" @click="selectLocation(loc.mapSrc)"
+              class="px-4 py-2 border rounded-md text-left hover:bg-blue-50 hover:border-blue-500 transition"
+              :class="{ 'border-blue-600 bg-blue-100': selectedLocation === loc.mapSrc }">
+              {{ loc.name }}
+            </button>
+          </div>
+        </div>
 
         <!-- Map -->
         <div class="w-full aspect-video rounded-xl overflow-hidden shadow">
           <iframe :src="selectedLocation" width="100%" height="100%" style="border:0;" allowfullscreen="false"
             loading="lazy"></iframe>
-        </div>
-      </div>
-
-      <!-- Location Buttons -->
-      <div class="flex-1 w-full space-y-4 text-black">
-        <h3 class="text-xl font-semibold mb-2">Available Location</h3>
-        <div class="flex flex-col sm:flex-row gap-3">
-          <button v-for="(loc, index) in locations" :key="index" @click="selectLocation(loc.mapSrc)"
-            class="px-4 py-2 border rounded-md text-left hover:bg-blue-50 hover:border-blue-500 transition"
-            :class="{ 'border-blue-600 bg-blue-100': selectedLocation === loc.mapSrc }">
-            {{ loc.name }}
-          </button>
         </div>
       </div>
     </div>

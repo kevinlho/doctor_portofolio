@@ -33,7 +33,7 @@
                 <div
                     class="absolute -top-8 -left-8 w-full h-full bg-blue-600 rounded-3xl blur-2xl opacity-40 z-0 hidden md:block">
                 </div>
-                <img src="/assets/photo/doctor.png" alt="Dr. Tushar Raja" class="relative z-10 w-full" />
+                <img src="/assets/photo/profile.png" alt="Dr. Isaac Deswanto" class="relative z-10 w-full" />
             </div>
         </div>
     </section>
