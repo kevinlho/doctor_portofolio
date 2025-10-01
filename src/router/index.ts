@@ -3,9 +3,9 @@ import HomeView from '../views/HomeView.vue'
 import ClinicalPostDetail from '@/views/ClinicalPostDetail.vue'
 import PageNotFound from '@/views/PageNotFound.vue'
 
-const adminRoute: RouteRecordRaw[] = [{}]
+// const adminRoute: RouteRecordRaw[] = [{}]
 
-const userRoute: RouteRecordRaw[] = [{}]
+// const userRoute: RouteRecordRaw[] = [{}]
 
 const baseRoute: RouteRecordRaw[] = [
   {
@@ -40,8 +40,8 @@ const baseRoute: RouteRecordRaw[] = [
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
-    ...adminRoute,
-    ...userRoute,
+    // ...adminRoute,
+    // ...userRoute,
     ...baseRoute
   ],
   scrollBehavior(to, from, savedPosition) {

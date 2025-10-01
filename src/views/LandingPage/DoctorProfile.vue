@@ -3,7 +3,7 @@
         <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 px-4 py-16 md:py-24">
 
             <!-- Left: Text Content -->
-            <div class="flex-1 text-center md:text-left">
+            <div class="flex-1 text-center md:text-left md:ml-10">
                 <h1 class="text-3xl sm:text-3xl md:text-4xl font-bold leading-tight mb-4">
                     dr. Isaac Ardianson Deswanto <br />
                     BMedSc, SpU, FICS

@@ -48,14 +48,14 @@ import { navItems } from '@/router/navigation';
         </div>
 
         <!-- Contact -->
-        <div>
+        <!-- <div>
           <h3 class="text-lg font-semibold border-b-2 border-blue-600 inline-block mb-4">Contact</h3>
           <ul class="space-y-2 text-sm text-gray-300">
             <li>102/ B Street, New Elephant Road, Sandigo, USA</li>
             <li><span class="text-white font-semibold">Email Us:</span> info@example.com</li>
             <li><span class="text-white font-semibold">Call Now:</span> +208-6666-0112</li>
           </ul>
-        </div>
+        </div> -->
       </div>
     </div>
 
