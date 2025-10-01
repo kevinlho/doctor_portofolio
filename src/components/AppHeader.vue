@@ -1,13 +1,14 @@
 <script setup>
 import { navItems } from '@/router/navigation'
 import { redirectToWhatsapp } from '@/utils/redirect'
-import { ref, defineProps } from 'vue'
+import { ref, defineProps, watch } from 'vue'
 
 const props = defineProps({
   sticky: Boolean
 })
 
 const mobileMenuOpen = ref(false)
+
 const toggleMobileMenu = () => {
   mobileMenuOpen.value = !mobileMenuOpen.value
 }
@@ -15,6 +16,15 @@ const toggleMobileMenu = () => {
 const onClickAppointment = () => {
   redirectToWhatsapp()
 }
+
+// simple scroll lock
+watch(mobileMenuOpen, (val) => {
+  if (val) {
+    document.body.classList.add('overflow-hidden')
+  } else {
+    document.body.classList.remove('overflow-hidden')
+  }
+})
 </script>
 
 <template>
@@ -35,8 +45,7 @@ const onClickAppointment = () => {
         'hidden lg:flex gap-6 text-sm font-semibold',
         sticky ? 'text-black' : 'text-white'
       ]">
-        <RouterLink v-for="item in navItems" :key="item.label" :to="item.to"
-          class="hover:text-blue-500">
+        <RouterLink v-for="item in navItems" :key="item.label" :to="item.to" class="hover:text-blue-500">
           {{ item.label }}
         </RouterLink>
       </nav>
@@ -60,7 +69,24 @@ const onClickAppointment = () => {
   </header>
 
   <!-- Mobile Menu -->
-  <div v-if="mobileMenuOpen" class="fixed inset-0 bg-white z-40 flex flex-col justify-between px-6 pt-4 pb-6 lg:hidden">
+  <div v-if="mobileMenuOpen"
+    class="fixed inset-0 bg-white z-[9999] flex flex-col px-6 pt-4 pb-6 lg:hidden">
+    <div class="flex items-center justify-between mb-6">
+      <!-- Logo -->
+      <div class="flex items-center gap-2">
+        <img src="/assets/icon/ic_logo.png" alt="" class="w-9 h-9" />
+        <span class="font-bold text-xl text-black">Dr Isaac Deswanto</span>
+      </div>
+
+      <button @click="toggleMobileMenu" class="p-2 rounded bg-gray-100 hover:bg-gray-200 lg:hidden">
+          <svg class="w-5 h-5 text-gray-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <line x1="4" y1="6" x2="20" y2="6" />
+            <line x1="4" y1="12" x2="20" y2="12" />
+            <line x1="4" y1="18" x2="20" y2="18" />
+          </svg>
+        </button>
+    </div>
+
     <!-- Navigation links -->
     <div class="flex flex-col space-y-4 text-sm font-semibold text-gray-800">
       <a href="#" class="hover:text-blue-600">HOME</a>
@@ -72,7 +98,7 @@ const onClickAppointment = () => {
     </div>
 
     <!-- Social Links -->
-    <div class="pt-8">
+    <div class="pb-12 mt-auto">
       <p class="font-bold mb-2 text-black">Follow us</p>
       <div class="flex gap-3">
         <a href="#" class="border border-gray-300 rounded-full p-2 hover:bg-gray-100 text-gray-800">
