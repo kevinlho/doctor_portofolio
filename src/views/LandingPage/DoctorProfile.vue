@@ -1,3 +1,8 @@
+<script setup lang="ts">
+import { redirectToWhatsapp } from '@/utils/redirect';
+
+</script>
+
 <template>
     <section class="text-white overflow-hidden">
         <div class="max-w-7xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 px-4 py-16 md:py-24">
@@ -12,13 +17,15 @@
                 </h1>
 
                 <p class="text-gray-300 text-base md:text-lg mb-6 max-w-xl mx-auto md:mx-0">
-          Dr. Isaac is a highly experienced and compassionate urologist, dedicated to providing expert care and improving patient well-being with advanced surgical techniques and modern treatment methods.
-        </p>
+                    Dr. Isaac is a highly experienced and compassionate urologist, dedicated to providing expert care
+                    and improving patient well-being with advanced surgical techniques and modern treatment methods.
+                </p>
 
 
                 <div class="flex flex-col sm:flex-row justify-center md:justify-start gap-4">
                     <button
-                        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition">
+                        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-md transition"
+                        @click="redirectToWhatsapp()">
                         BOOK APPOINTMENT <i class="fas fa-arrow-right ml-2"></i>
                     </button>
                     <button

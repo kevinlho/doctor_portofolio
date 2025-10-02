@@ -1,5 +1,6 @@
 <script setup>
 import { navItems } from '@/router/navigation';
+import { redirectToInstagram, redirectToTikTok, redirectToYouTube } from '@/utils/redirect';
 
 </script>
 
@@ -17,18 +18,17 @@ import { navItems } from '@/router/navigation';
           at its layout.
         </p>
         <div class="flex items-center gap-4">
-          <a href="#" class="bg-[#1B2C47] hover:bg-blue-600 p-3 rounded-md">
+          <button @click="redirectToInstagram" class="bg-[#1B2C47] hover:bg-blue-600 p-3 rounded-md">
             <ion-icon name="logo-instagram"></ion-icon>
-          </a>
-          <a href="#" class="bg-[#1B2C47] hover:bg-blue-600 p-3 rounded-md">
+          </button>
+
+          <button @click="redirectToTikTok" class="bg-[#1B2C47] hover:bg-blue-600 p-3 rounded-md">
             <ion-icon name="logo-tiktok"></ion-icon>
-          </a>
-          <a href="#" class="bg-[#1B2C47] hover:bg-blue-600 p-3 rounded-md">
+          </button>
+
+          <button @click="redirectToYouTube" class="bg-[#1B2C47] hover:bg-blue-600 p-3 rounded-md">
             <ion-icon name="logo-youtube"></ion-icon>
-          </a>
-          <a href="#" class="bg-[#1B2C47] hover:bg-blue-600 p-3 rounded-md">
-            <ion-icon name="logo-twitter"></ion-icon>
-          </a>
+          </button>
         </div>
       </div>
 
@@ -39,8 +39,7 @@ import { navItems } from '@/router/navigation';
           <h3 class="text-lg font-semibold border-b-2 border-blue-600 inline-block mb-4">Navigation</h3>
           <ul class="space-y-2 text-sm text-gray-300">
             <li v-for="item in navItems" :key="item.label">
-              <RouterLink :to="item.to"
-                class="hover:text-blue-500">
+              <RouterLink :to="item.to" class="hover:text-blue-500">
                 {{ item.label }}
               </RouterLink>
             </li>

@@ -4,7 +4,6 @@ import { ref } from 'vue'
 const locations = [
   { name: 'EMC Tangerang', mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.6003402107117!2d106.64523067316675!3d-6.18420846058968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f9beaae8a477%3A0x501739509e5f571a!2sRS%20EMC%20Tangerang!5e0!3m2!1sen!2sid!4v1754227994947!5m2!1sen!2sid' },
   { name: 'EMC Alam Sutera', mapSrc: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.1424381570605!2d106.64841077316771!3d-6.244952661145426!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69fb943335dda1%3A0x1f0d85230dd7bd29!2sRS%20EMC%20Alam%20Sutera!5e0!3m2!1sen!2sid!4v1754228053401!5m2!1sen!2sid' },
-  { name: 'Emc Emc', mapSrc: 'https://maps.google.com/maps?q=BRAC%20University&t=&z=13&ie=UTF8&iwloc=&output=embed' },
 ]
 
 const selectedLocation = ref(locations[0].mapSrc)
